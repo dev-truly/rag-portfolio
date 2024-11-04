@@ -1,0 +1,2 @@
+class DocumentNotAllowedError(Exception):
+    pass

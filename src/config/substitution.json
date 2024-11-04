@@ -1,0 +1,27 @@
+{
+  "importLib": {
+    "datetime": "datetime"
+  },
+
+  "PrefixSub": {
+    "(작년|전년|전년도)": {"eval": "str(datetime.now().year - 1)"}
+  },
+  "SuffixSub": {
+    "(?i)(record id|criticality|major)(를|을|가|이|인)": {"str": "\\1"},
+    "(?i)(major|minor)": {"str": "major minor"},
+    "(?i)(record|observation) ?(번호|id)? ?(을|를|가|이|인|의)?": {"str": ""},
+    "(?i)(표|테이블|table) ?(형식|로|형태)?": {"str": ""},
+    "(개정|관련|찾을) ?(과|된|수)?": {"str": ""}
+  },
+
+  "PrefixRep": {
+  },
+  "SuffixRep": {
+    "지적사항에 대한": "관련",
+    "내용": "내용 수정",
+    "(": "( ",
+    ")": " )",
+    "조치": "조치 처리",
+    "observation이 있었는데, 어떻게 답변이 됐나요?": ""
+  }
+}
